@@ -1,5 +1,5 @@
-FROM ubuntu:14.04
-MAINTAINER Prakshi Yadav
+FROM ubuntu:16.04
+MAINTAINER Ijaz
 
 # Install packages
 ENV DEBIAN_FRONTEND noninteractive
@@ -30,11 +30,7 @@ RUN a2enmod rewrite
 # Configure /app folder with sample app
 COPY index.html /var/www/html
 #Environment variables to configure php
-ENV PHP_UPLOAD_MAX_FILESIZE 10M
-ENV PHP_POST_MAX_SIZE 10M
+ENV PHP_UPLOAD_MAX_FILESIZE 32M
+ENV PHP_POST_MAX_SIZE 32M
 
-# Add volumes for MySQL
-VOLUME  ["/etc/mysql", "/var/lib/mysql" ]
-
-EXPOSE 80 3306
 CMD ["/run.sh"]
