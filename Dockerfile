@@ -3,9 +3,11 @@ MAINTAINER Ijaz
 
 # Install packages
 ENV DEBIAN_FRONTEND noninteractive
+RUN apt-get install apache2 libapache2-mod-php7.0 -y
+RUN apt-get install mysql-server -y
 RUN apt-get update && \
-  apt-get -y install git apache2 libapache2-mod-php5 mysql-server php5-mysql pwgen php-apc php5-mcrypt \
-  php7.0 \
+RUN apt-get install -y \
+	php7.0 \
 	php7.0-bz2 \
 	php7.0-cgi \
 	php7.0-cli \
@@ -38,7 +40,6 @@ RUN apt-get update && \
 	php7.0-xmlrpc \
 	php7.0-xsl \
 	php7.0-zip
-
 # Add image configuration and scripts
 ADD start-apache2.sh /start-apache2.sh
 ADD start-mysqld.sh /start-mysqld.sh
