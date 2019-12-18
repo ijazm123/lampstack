@@ -60,7 +60,8 @@ COPY index.html /var/www/html
 ENV PHP_UPLOAD_MAX_FILESIZE 32M
 ENV PHP_POST_MAX_SIZE 32M
 
-CMD ["./run.sh"]
-CMD ["./start-apache2.sh"]
-CMD ["./start-mysqld.sh"]
+RUN bash -c "/run.sh"
+RUN bash -c "/start-apache2.sh"
+RUN bash -c "/start-mysqld.sh"
+
 
