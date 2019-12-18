@@ -38,8 +38,6 @@ RUN apt-get update && \
 	php7.0-xmlrpc \
 	php7.0-xsl \
 	php7.0-zip
-  && \
-  echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
 # Add image configuration and scripts
 ADD start-apache2.sh /start-apache2.sh
