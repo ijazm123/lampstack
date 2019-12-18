@@ -36,7 +36,6 @@ RUN apt-get install -y \
 	php7.0-xsl \
 	php7.0-zip
 RUN apt-get install apache2 libapache2-mod-php7.0 -y
-RUN apt-get install mysql-server -y
 # Add image configuration and scripts
 ADD start-apache2.sh /start-apache2.sh
 ADD start-mysqld.sh /start-mysqld.sh
