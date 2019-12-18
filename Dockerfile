@@ -1,8 +1,6 @@
 FROM ubuntu:16.04
-MAINTAINER Ijaz
-
-# Install packages
-RUN apt-get update && \
+RUN apt-get update
+RUN apt-get install -y zip unzip
 RUN apt-get install -y \
 	php7.0 \
 	php7.0-bz2 \
